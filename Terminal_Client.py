@@ -1,3 +1,4 @@
+
 # Chat Room client side
 
 import socket, threading, sys
@@ -16,8 +17,8 @@ def send_message():
     while True:
         message = input("")
         client_socket.send(message.encode(ENCODER))
-        if message == "cd quite":
-            client_socket.send("cd quit".encode(ENCODER))
+        if message == "cd quit":
+            client_socket.close()
         if status == False:
             break    
       
